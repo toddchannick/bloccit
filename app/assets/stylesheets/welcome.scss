@@ -1,0 +1,30 @@
+a.social-btn {
+  -webkit-border-radius: 15;
+  -moz-border-radius: 15;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  color: #ffffff;
+  font-size: 16px;
+  background: #68b076;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+a.social-btn:hover {
+  background: #7dd18d;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+section {
+  position: relative;
+  margin-top: 3em;
+}
+
+.sec-title {
+  position: relative;
+  font-size: 16px;
+  font-weight:bold;
+}
