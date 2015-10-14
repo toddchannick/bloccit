@@ -15,7 +15,6 @@
       <li><%= link_to "Bloccit", root_path %></li>
       <li><%= link_to "About", about_path %></li>
     </ul>
-    <%= yield %>
 
     <% if flash[:notice] %>
       <div class="alert alert-success">
@@ -34,7 +33,8 @@
       </div>
     <% end %>
 
-  </div
+    <%= yield %>
+  </div>
 
 </body>
 </html>
