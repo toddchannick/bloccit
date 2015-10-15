@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :posts
-
-  resources :questions
+  resources :topics do
+    resources :posts, except: [:index]
+  end
 
   get 'about' => 'welcome#about'
-
   root to: 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

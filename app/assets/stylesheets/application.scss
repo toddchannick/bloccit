@@ -18,6 +18,33 @@
   margin-top:1.5em;
 }
 
+.body-text {
+  width:70%;
+  margin-left: 1em;
+}
+
+.row div {
+  padding-top:.25em;
+  padding-bottom:.25em;
+}
+
+.row p {
+  position:relative;
+  clear:both;
+}
+
+#heading {
+  width:70%;
+  float:left;
+}
+
+#header-buttons {
+  position:relative;
+  left:0;
+  width:25%;
+  margin-top:2em;
+}
+
 i {
   padding-right: 1em;
 }
@@ -41,6 +68,42 @@ i {
 #back-button {
   text-decoration:none;
 }
+
+ul.dropdown-menu{
+  border: none;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+ul.dropdown-menu a {
+  margin-bottom:.5em;
+}
+
+.dropdown-menu:hover a {
+  border: none !important;
+  outline: none !important;
+  background-color: white;
+}
+
+.dropdown-menu a:hover {
+  background-color: white !important;
+}
+
+.open>.dropdown-toggle.dropdown-menu{
+   outline: none !important;
+   border: none !important;
+   -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.open>.dropdown-toggle.dropdown-menu:hover{
+   outline: none !important;
+   border: none !important;
+}
+
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
