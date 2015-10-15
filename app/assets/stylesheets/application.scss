@@ -14,5 +14,33 @@
  *= require_self
  */
 
+.body {
+  margin-top:1.5em;
+}
+
+i {
+  padding-right: 1em;
+}
+
+.answered {
+  color: green;
+}
+
+.unanswered {
+  color: red;
+}
+
+.resolution {
+  margin-top: 2em;
+}
+
+#resolved {
+  font-weight: bold;
+}
+
+#back-button {
+  text-decoration:none;
+}
+
  @import "bootstrap-sprockets";
  @import "bootstrap";

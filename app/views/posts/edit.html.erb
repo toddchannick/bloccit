@@ -19,8 +19,10 @@
          <%= f.label :body %>
          <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
        </div>
+       <br>
        <div class="form-group">
          <%= f.submit "Save", class: 'btn btn-success' %>
+         <%= link_to "Cancel", @post, class: 'btn btn-primary' %>
        </div>
      <% end %>
    </div>
