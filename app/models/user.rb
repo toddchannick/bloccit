@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
+  before_save { self.name = name.split(' ').map{ |word| word.capitalize }.join(' ') }
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
             #Start string, one or more (indicated by the + sign) words or hyphens/periods (todd.channick), an @ symbol,
