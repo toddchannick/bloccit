@@ -15,34 +15,50 @@
  */
 
 .body {
+  width:90%;
+  margin-left:auto;
+  margin-right:auto;
+  position:relative;
+}
+
+ #heading {
+  width:100%;
+  position:relative;
+  height:5em;
+  padding-bottom:2.5em;
+  display:block;
+  text-align:left;
+ }
+
+ #head-title {
+   width:80%;
+   margin-left:0px;
+ }
+
+#header-buttons {
+  position: relative;
+  transform: translateY(35%);
+  margin-left:1em;
+}
+
+#create-new {
+ float:right;
+ margin-left:1em;
+ transform: translateY(35%);
+}
+
+.body {
   margin-top:1.5em;
 }
 
 .body-text {
-  width:70%;
-  margin-left: 1em;
+  width:80%;
 }
+
 
 .row div {
   padding-top:.25em;
   padding-bottom:.25em;
-}
-
-.row p {
-  position:relative;
-  clear:both;
-}
-
-#heading {
-  width:70%;
-  float:left;
-}
-
-#header-buttons {
-  position:relative;
-  left:0;
-  width:25%;
-  margin-top:2em;
 }
 
 i {
@@ -70,25 +86,40 @@ i {
 }
 
 ul.dropdown-menu{
+  text-align: right;
   border: none;
   outline: none !important;
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 ul.dropdown-menu a {
   margin-bottom:.5em;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+ul.post-menu {
+  text-align:left !important;
+  li {
+    margin-left:-60px;
+  }
+}
+
+.dropdown-menu > li > a {
+  padding-right:0px !important;
+  padding-left:0px !important;
 }
 
 .dropdown-menu:hover a {
   border: none !important;
   outline: none !important;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .dropdown-menu a:hover {
-  background-color: white !important;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .open>.dropdown-toggle.dropdown-menu{
@@ -97,6 +128,7 @@ ul.dropdown-menu a {
    -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .open>.dropdown-toggle.dropdown-menu:hover{
@@ -107,3 +139,11 @@ ul.dropdown-menu a {
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .user-info {
+   margin-top: 9px;
+ }
+
+ .nav {
+   margin-top: 5px;
+ }

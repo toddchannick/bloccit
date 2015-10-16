@@ -1,53 +1,22 @@
-<div id="heading">
-  <h1>
-    <%= @topic.name %>
-  </h1>
-</div>
+  <div class="row" id="heading">
+    <%= render partial: 'header', locals: { object: @topic, edit_path: edit_topic_path, type: "Topic" } %>
+  </div>
 
-<div class="btn-group" id="header-buttons">
-  <button id="settings" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="glyphicon glyphicon-cog"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="settings">
-    <li>
-      <%= link_to edit_topic_path do %>
-        <span class = "btn btn-md btn-primary"><i class="glyphicon glyphicon-pencil"></i>
-          Edit Topic
-        </span>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to @topic, method: :delete, data: { confirm: 'Are you sure you want to delete this topic?' } do %>
-        <span class = "btn btn-md btn-danger"><i class="glyphicon glyphicon-trash"></i>
-          Delete Topic
-        </span>
-      <% end %>
-    </li>
-  </ul>
-</div>
-
-
- <div class="clearfix row">
-   <div class="body-text">
-     <p class="lead"><%= @topic.description %></p>
-     <% @topic.posts.each do |post| %>
-       <div class="media">
-         <div class="media-body">
-           <h4 class="media-heading">
-             <%= link_to post.title, topic_post_path(@topic, post) %>
-           </h4>
-           <small>
-             submitted <%= time_ago_in_words(post.created_at) %> ago <br>
-             <%= post.comments.count %> Comments
-           </small>
+   <div class="row">
+     <div class="body-text">
+       <p class="lead"><%= @topic.description %></p>
+       <% @topic.posts.each do |post| %>
+         <div class="media">
+           <div class="media-body">
+             <h4 class="media-heading">
+               <%= link_to post.title, topic_post_path(@topic, post) %>
+             </h4>
+             <small>
+               submitted <%= time_ago_in_words(post.created_at) %> ago <br>
+               <%= post.comments.count %> Comments
+             </small>
+           </div>
          </div>
-       </div>
-     <% end %>
+       <% end %>
+     </div>
    </div>
- </div>
-
- <div class="row">
-   <div class="col-md-4">
-     <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
-   </div>
- </div>
