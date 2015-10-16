@@ -20,7 +20,7 @@
 
 .body-text {
   width:70%;
-  margin-left: 1em;
+  margin-left: 1.5em;
 }
 
 .row div {
@@ -38,12 +38,19 @@
   float:left;
 }
 
-#header-buttons {
+.top-btn-group {
+  display:inline-block;
   position:relative;
-  left:0;
-  width:25%;
   margin-top:2em;
+  list-style:outside none none;
+  text-align:left;
+  li {
+    float:left;
+    padding-left:.5em;
+    padding-right:.5em
+  }
 }
+
 
 i {
   padding-right: 1em;
@@ -69,7 +76,12 @@ i {
   text-decoration:none;
 }
 
+.post-menu {
+  margin-left:3em;
+}
+
 ul.dropdown-menu{
+  margin-left:1.5em;
   border: none;
   outline: none !important;
   -webkit-box-shadow: none !important;
@@ -77,9 +89,11 @@ ul.dropdown-menu{
   box-shadow: none !important;
 }
 
-ul.dropdown-menu a {
-  margin-bottom:.5em;
+.dropdown-menu a {
+  position:relative;
+  margin-bottom:.4em;
 }
+
 
 .dropdown-menu:hover a {
   border: none !important;

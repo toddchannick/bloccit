@@ -4,32 +4,72 @@
   </h1>
 </div>
 
-<div class="btn-group" id="header-buttons">
-  <button id="settings" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="glyphicon glyphicon-cog"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="settings">
-    <li>
-      <%= link_to edit_topic_path do %>
-        <span class = "btn btn-md btn-primary"><i class="glyphicon glyphicon-pencil"></i>
-          Edit Topic
-        </span>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to @topic, method: :delete, data: { confirm: 'Are you sure you want to delete this topic?' } do %>
-        <span class = "btn btn-md btn-danger"><i class="glyphicon glyphicon-trash"></i>
-          Delete Topic
-        </span>
-      <% end %>
-    </li>
-  </ul>
-</div>
+<ul class="top-btn-group" id="header-buttons">
+  <li>
+    <button id="settings" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="glyphicon glyphicon-edit"></span>
+    </button>
+    <ul class="dropdown-menu pull-left" aria-labelledby="settings">
+      <li>
+        <%= link_to edit_topic_path do %>
+          <span class = "btn btn-sm btn-primary"><i class="glyphicon glyphicon-pencil"></i>
+            Edit Topic
+          </span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to @topic, method: :delete, data: { confirm: 'Are you sure you want to delete this topic?' } do %>
+          <span class = "btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i>
+            Delete Topic
+          </span>
+        <% end %>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <button id="new-posts" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="glyphicon glyphicon-pencil"></span>
+    </button>
+    <ul class="post-menu dropdown-menu pull-left" aria-labelledby="new-posts">
+      <li>
+        <%= link_to new_topic_post_path(@topic) do %>
+          <span class = "btn btn-sm btn-info"><i class="glyphicon glyphicon-pencil"></i>
+            New Post
+          </span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to new_topic_sponsored_post_path(@topic) do %>
+          <span class = "btn btn-sm btn-info"><i class="glyphicon glyphicon-pencil"></i>
+            New Sponsored Post
+          </span>
+        <% end %>
+      </li>
+    </ul>
+  </li>
+
+</ul>
 
 
  <div class="clearfix row">
    <div class="body-text">
      <p class="lead"><%= @topic.description %></p>
+
+     <% @topic.sponsored_posts.each do |post| %>
+       <div class="media">
+         <div class="media-body">
+           <h4 class="media-heading">
+             Sponsored:
+             <%= link_to post.title, topic_sponsored_post_path(@topic, post) %>
+           </h4>
+           <small>
+             submitted <%= time_ago_in_words(post.created_at) %> ago
+           </small>
+         </div>
+       </div>
+     <% end %>
+
      <% @topic.posts.each do |post| %>
        <div class="media">
          <div class="media-body">
