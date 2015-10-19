@@ -14,11 +14,17 @@
  *= require_self
  */
 
+ html {
+	position: relative;
+  min-height: 100%;
+}
+
 .body {
   width:90%;
   margin-left:auto;
   margin-right:auto;
   position:relative;
+  padding-bottom:7em;
 }
 
  #heading {
@@ -59,7 +65,7 @@
 }
 
 i {
-  padding-right: 1em;
+  padding-right: .7em;
 }
 
 .answered {
@@ -151,6 +157,13 @@ ul.post-menu {
    }
  }
 
+.nav-text {
+  position:relative;
+  transform: translateY(50%);
+  padding-left:10px;
+  padding-right:10px;
+}
+
  .green {
    background-color: #283C42 !important;
  }
@@ -158,6 +171,14 @@ ul.post-menu {
 
  .btn {
      padding: 10px 15px;
+     border: 0 none;
+     font-weight: 700;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+ }
+
+ .btn-sm {
+     padding:5px 7px;
      border: 0 none;
      font-weight: 700;
      letter-spacing: 1px;
@@ -205,14 +226,18 @@ ul.post-menu {
     }
 }
 
-
-
 .sign-up {
-  float:right;
   a {
   text-decoration:none;
   color:white;
   }
+}
+
+.nav-tabs {
+  position:relative;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
@@ -221,6 +246,7 @@ ul.post-menu {
     border: 1px solid #ddd;
     border-bottom-color: transparent;
 }
+
 .nav-tabs>li>a {
     margin-right: 2px;
     line-height: 1.428571429;
@@ -238,16 +264,15 @@ ul.post-menu {
 }
 
 .gray-box {
-  background-color:#ddd;
+  background-color:#EBE5E1;
   padding:20px !important;
   border-radius: 4px;
 }
 
-.indented-posts {
+.posts {
   position:relative;
   display:block;
   margin-top:20px;
-  margin-left:20px;
 }
 
 .confirm-buttons > form > input {
@@ -257,4 +282,26 @@ ul.post-menu {
 
 .welcome-box {
   padding: 50px !important;
+}
+
+.gray-outline {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding:1em;
+}
+
+footer {
+  position:absolute;
+  width:100%;
+  left:0;
+  bottom:0;
+  height:5em;
+  background-color:#212121;
+  border-top: 1px solid #0099cc;
+}
+
+.caps {
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }

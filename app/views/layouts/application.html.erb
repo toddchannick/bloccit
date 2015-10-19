@@ -9,16 +9,20 @@
 </head>
 <body>
 
-
-
     <ul class="nav nav-tabs top-nav">
       <li><%= link_to "Bloccit", root_path %></li>
       <li><%= link_to "Topics", topics_path %></li>
       <li><%= link_to "About", about_path %></li>
 
-      <div class="sign-up pull-right user-info">
-       <%= link_to "Sign Up", new_user_path %>
-     </div>
+
+      <% if current_user %>
+        <li class="pull-right"><%= link_to "Sign Out", session_path(current_user), method: :delete %></li>
+        <li class="nav-text pull-right"><%= current_user.name %> - </li>
+      <% else %>
+        <li class="pull-right"><%= link_to "Sign In", new_session_path %></li>
+        <li class="nav-text pull-right">OR</li>
+        <li class="pull-right"><%= link_to "Sign Up", new_user_path %></li>
+      <% end %>
 
     </ul>
 
@@ -45,6 +49,8 @@
     <%= yield %>
     </section>
   </div>
+  <footer>
 
+  </footer>
 </body>
 </html>
