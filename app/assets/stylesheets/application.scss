@@ -148,8 +148,7 @@ ul.post-menu {
  }
 
  .nav {
-   padding-top: 15px;
-   background-color: #0099cc;
+   padding-top: 25px;
    width:100%;
    li > a {
      text-decoration:none;
@@ -217,10 +216,18 @@ ul.post-menu {
      box-shadow: none;
  }
 
+ .header-bar {
+   background-color: #0099cc;
+   border-bottom: 2px solid #ddd;
+   div {
+     padding-bottom:0px !important;
+   }
+ }
+
  .nav-tabs {
-    border-bottom: 2px solid #ddd;
     padding-right: 2em;
     padding-left: 2em;
+    border-bottom:0px !important;
     li > a:hover {
       color: #212121 !important;
     }
@@ -304,4 +311,48 @@ footer {
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.login-nav {
+  margin-top:.3em;
+  padding-right:1em;
+  padding-bottom:5px !important;
+  display: table;
+  text-align: center;
+}
+
+.username {
+  display: table-cell;
+  color:white;
+  vertical-align: bottom;
+  padding-right:1em;
+  position: relative;
+}
+
+.avatar-toggle:hover {
+  cursor:pointer;
+}
+
+.user-dropdown {
+  margin-right:25px;
+  li {
+    margin-top:6px;
+    float:right;
+    width:100px;
+    background-color: #212121;
+    border-radius: 4px;
+    text-align: center;
+    padding: 4px !important;
+  }
+  li > a {
+    text-decoration:none;
+    font-size:12px;
+    color:white;
+    font-weight:400;
+    margin-bottom:0px !important;
+  }
+  li > a:hover {
+    background-color:#383838;
+    color:white;
+  }
 }

@@ -1,0 +1,11 @@
+<div class="pull-right login-nav">
+  <span class="username caps"><%= current_user.name %></span>
+  <div class="avatar-toggle" id="session" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <%= image_tag(avatar_url(current_user)) %>
+  </div>
+
+<ul class="user-dropdown dropdown-menu" aria-labelledby="session">
+  <li class="caps"><%= link_to "Sign Out", session_path(current_user), method: :delete %></li>
+</ul>
+
+</div>
