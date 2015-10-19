@@ -1,14 +1,19 @@
-<h1>Topics
-  <%= link_to new_topic_path do %>
-    <div class = "btn-sm btn-success pull-right">
-    <i class="glyphicon glyphicon-pencil"></i>
-    New Topic
+<div class = "row">
+  <div class = "col-xs-10">
+    <h1>Topics</h1>
   </div>
-  <% end %>
-</h1>
+  <div class = "col-xs-2 new-topic-btn">
+    <%= link_to new_topic_path do %>
+      <button class = "btn btn-sm btn-success pull-right">
+      <i class="glyphicon glyphicon-pencil"></i>
+      New Topic
+      </button>
+    <% end %>
+  </div>
+</div>
 
  <div class="row">
-   <div class="col-md-8">
+   <div class="col-xs-10">
      <% @topics.each do |topic| %>
        <div class="media">
          <div class="media-body">

@@ -22,39 +22,36 @@
 }
 
  #heading {
-  width:100%;
-  position:relative;
   height:5em;
   padding-bottom:2.5em;
-  display:block;
-  text-align:left;
  }
 
  #head-title {
+   position:relative;
+   display:block;
    width:80%;
    margin-left:0px;
  }
 
 #header-buttons {
+  display:inline-block;
   position: relative;
   transform: translateY(35%);
-  margin-left:1em;
 }
 
 #create-new {
- float:right;
- margin-left:1em;
+ float:left;
+ padding-right:4px;
  transform: translateY(35%);
+}
+
+.new-topic-btn {
+  margin-top:2em;
 }
 
 .body {
   margin-top:1.5em;
 }
-
-.body-text {
-  width:80%;
-}
-
 
 .row div {
   padding-top:.25em;
@@ -86,7 +83,7 @@ i {
 }
 
 ul.dropdown-menu{
-  text-align: right;
+  text-align: left;
   border: none;
   outline: none !important;
   -webkit-box-shadow: none !important;
@@ -103,7 +100,7 @@ ul.dropdown-menu a {
 ul.post-menu {
   text-align:left !important;
   li {
-    margin-left:-60px;
+    margin-left:0px;
   }
 }
 
@@ -145,5 +142,119 @@ ul.post-menu {
  }
 
  .nav {
-   margin-top: 5px;
+   padding-top: 15px;
+   background-color: #0099cc;
+   width:100%;
+   li > a {
+     text-decoration:none;
+     color:white;
+   }
  }
+
+ .green {
+   background-color: #283C42 !important;
+ }
+
+
+ .btn {
+     padding: 10px 15px;
+     border: 0 none;
+     font-weight: 700;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+ }
+
+ .btn:focus, .btn:active:focus, .btn.active:focus {
+     outline: 0 none;
+ }
+
+ .btn-primary {
+     background: #0099cc;
+     color: #ffffff;
+ }
+
+ .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+     background: #33a6cc;
+ }
+
+ .btn-primary:active, .btn-primary.active {
+     background: #007299;
+     box-shadow: none;
+ }
+
+ .btn-success {
+     background: #0099cc;
+     color: #ffffff;
+ }
+
+ .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-primary {
+     background: #33a6cc;
+ }
+
+ .btn-success:active, .btn-success.active {
+     background: #007299;
+     box-shadow: none;
+ }
+
+ .nav-tabs {
+    border-bottom: 2px solid #ddd;
+    padding-right: 2em;
+    padding-left: 2em;
+    li > a:hover {
+      color: #212121 !important;
+    }
+}
+
+
+
+.sign-up {
+  float:right;
+  a {
+  text-decoration:none;
+  color:white;
+  }
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.428571429;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+
+.topic-desc {
+  position:relative;
+  display:block;
+  margin-top:2em;
+  p {
+    margin:0px !important;
+  }
+}
+
+.gray-box {
+  background-color:#ddd;
+  padding:20px !important;
+  border-radius: 4px;
+}
+
+.indented-posts {
+  position:relative;
+  display:block;
+  margin-top:20px;
+  margin-left:20px;
+}
+
+.confirm-buttons > form > input {
+  float:left;
+  margin-right:2em;
+}
+
+.welcome-box {
+  padding: 50px !important;
+}

@@ -1,10 +1,10 @@
-  <div class="row" id="heading">
-    <%= render partial: 'header', locals: { object: @topic, edit_path: edit_topic_path, type: "Topic" } %>
-  </div>
 
-   <div class="row">
-     <div class="body-text">
-       <p class="lead"><%= @topic.description %></p>
+<div class="row">
+
+   <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+     <h1><%= @topic.name %></h1></span>
+     <div class="topic-desc gray-box"><p class="lead"><%= @topic.description %></p></div>
+      <div class="indented-posts">
        <% @topic.posts.each do |post| %>
          <div class="media">
            <div class="media-body">
@@ -20,3 +20,9 @@
        <% end %>
      </div>
    </div>
+
+   <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+     <%= render partial: 'header', locals: { object: @topic, edit_path: edit_topic_path, type: "Topic" } %>
+   </div>
+
+ </div>

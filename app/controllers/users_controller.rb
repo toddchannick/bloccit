@@ -20,4 +20,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def confirm
+    @user = User.new
+    puts "New user created."
+    @user.name = params[:user][:name]
+    puts "User name is #{@user.name}"
+    @user.email = params[:user][:email]
+  end
+
+
 end
