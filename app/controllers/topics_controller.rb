@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
 
   before_action :require_sign_in, except: [:index, :show]
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authorize_user, except: [:index, :show, :edit]
 
   def index
     @topics = Topic.all
@@ -12,6 +12,10 @@ class TopicsController < ApplicationController
   end
 
   def edit
+    unless current_user.moderator? || current_user.admin?
+      flash[:error] = "You must be a moderator or admin to do that."
+      redirect_to topics_path
+    end
     @topic = Topic.find(params[:id])
   end
 

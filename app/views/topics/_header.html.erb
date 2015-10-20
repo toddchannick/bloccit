@@ -1,21 +1,25 @@
-<% if user_is_authorized_for_topics? %>
+<% if user_is_authorized_for_topics? || user_is_mod? %>
   <div id="header-buttons">
     <button id="settings" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="glyphicon glyphicon-edit"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="settings">
       <li>
-        <%= link_to edit_path do %>
-          <span class = "btn btn-sm btn-primary"><i class="glyphicon glyphicon-pencil"></i>
-            Edit <%= type %>
-          </span>
+        <% if user_is_authorized_for_topics? || user_is_mod? %>
+          <%= link_to edit_path do %>
+            <span class = "btn btn-sm btn-primary"><i class="glyphicon glyphicon-pencil"></i>
+              Edit <%= type %>
+            </span>
+          <% end %>
         <% end %>
       </li>
       <li>
-        <%= link_to object, method: :delete, data: { confirm: 'Are you sure you want to delete this topic?' } do %>
-          <span class = "btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i>
-            Delete <%= type %>
-          </span>
+        <% if user_is_authorized_for_topics? %>
+          <%= link_to object, method: :delete, data: { confirm: 'Are you sure you want to delete this topic?' } do %>
+            <span class = "btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i>
+              Delete <%= type %>
+            </span>
+          <% end %>
         <% end %>
       </li>
     </ul>

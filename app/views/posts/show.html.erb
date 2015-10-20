@@ -17,7 +17,7 @@
       <%= link_to "Back", @topic , class: 'btn btn-primary pull-left' %>
    </div>
 
-   <% if user_is_authorized_for_post?(@post) %>
+   <% if user_is_authorized_for_post?(@post) || user_is_mod? %>
      <div class="col-xs-2" id="heading">
        <%= render partial: 'header', locals: { object: @post, parent: @post.topic, edit_path: edit_topic_post_path, type: "Post" } %>
      </div>
