@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :posts
 
   before_save { self.email = email.downcase }
+  before_save { self.role ||= :member }
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
             #Start string, one or more (indicated by the + sign) words or hyphens/periods (todd.channick), an @ symbol,
@@ -19,4 +20,5 @@ class User < ActiveRecord::Base
 
    has_secure_password
 
+   enum role: [:member, :admin]
 end

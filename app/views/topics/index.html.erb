@@ -3,12 +3,16 @@
     <h1>Topics</h1>
   </div>
   <div class = "col-xs-5 new-topic-btn pull-right">
-    <%= link_to new_topic_path do %>
-      <button class = "btn btn-sm btn-success pull-right">
-      <i class="glyphicon glyphicon-pencil"></i>
-      New Topic
-      </button>
+
+    <% if user_is_authorized_for_topics? %>
+      <%= link_to new_topic_path do %>
+        <button class = "btn btn-sm btn-success pull-right">
+        <i class="glyphicon glyphicon-pencil"></i>
+        New Topic
+        </button>
+      <% end %>
     <% end %>
+
   </div>
 </div>
 
