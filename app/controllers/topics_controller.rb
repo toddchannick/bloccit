@@ -55,6 +55,7 @@ class TopicsController < ApplicationController
 
    private
 
+   #require certain parameters to prevent wrongful mass assignment
    def topic_params
      params.require(:topic).permit(:name, :description, :public)
    end
