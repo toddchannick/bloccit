@@ -16,21 +16,6 @@
 
   <div class="row">
     <div class="posts gray-outline">
-     <% @topic.posts.each do |post| %>
-       <div class="media">
-         <div class="media-body">
-           <h4 class="media-heading">
-             <%= link_to post.title, topic_post_path(@topic, post) %>
-           </h4>
-           <div id="post-details">
-             <small>
-               submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %> <br>
-               <strong><%= post.comments.count %> Comments </strong>
-             </small>
-           </div>
-         </div>
-         <hr>
-       </div>
-     <% end %>
+     <%= render @topic.posts %>
    </div>
  </div>
