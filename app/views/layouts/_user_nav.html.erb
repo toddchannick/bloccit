@@ -4,7 +4,8 @@
     <%= image_tag(avatar_url(current_user)) %>
   </div>
 
-<ul class="user-dropdown dropdown-menu" aria-labelledby="session">
+<ul class="user-dropdown dropdown-menu dropdown-menu-right" aria-labelledby="session">
+  <li class="caps"><%= link_to "Profile" %></li>
   <li class="caps"><%= link_to "Sign Out", session_path(current_user), method: :delete %></li>
 </ul>
 

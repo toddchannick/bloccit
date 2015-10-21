@@ -1,13 +1,14 @@
-<div class="media">
-  <div class="media-body">
-    <h4 class="media-heading">
-      <%= link_to topic.name, topic %>
-    </h4>
-    <div class="indent">
-      <small>
-        <%= topic.description %>
-      </small>
+<div class="media topics-list">
+  <%= link_to topic do %>
+    <div id="topics" class="media-body gray-box">
+      <h4 class="media-heading">
+        <%= topic.name %>
+      </h4>
+      <div class="indent">
+        <small>
+          <%= topic.description %>
+        </small>
+      </div>
     </div>
-  </div>
-  <hr>
+  <% end %>
 </div>

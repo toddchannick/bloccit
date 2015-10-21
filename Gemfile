@@ -11,7 +11,9 @@ source 'https://rubygems.org'
  group :development do
    gem 'sqlite3'
    gem 'pry-rails'
+   gem 'meta_request'
  end
+
 
  group :development, :test do
    gem 'rspec-rails', '~> 3.0'

@@ -6,7 +6,7 @@
 
     <% if user_is_authorized_for_topics? %>
       <%= link_to new_topic_path do %>
-        <button class = "btn btn-sm btn-success pull-right">
+        <button class = "btn btn-sm btn-primary pull-right">
         <i class="glyphicon glyphicon-pencil"></i>
         New Topic
         </button>
@@ -16,8 +16,8 @@
   </div>
 </div>
 
- <div class="row">
-   <div class="col-xs-12 gray-outline">
-     <%= render @topics %>
-   </div>
+<div class="row">
+ <div class="col-xs-12">
+   <%= render @topics %>
  </div>
+</div>
