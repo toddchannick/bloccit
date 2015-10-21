@@ -30,20 +30,15 @@ include RandomData
  end
  posts = Post.all
 
+ # Create Comments
  100.times do
    Comment.create!(
+     user: users.sample,
      post: posts.sample,
      body: RandomData.random_paragraph
    )
  end
 
- 100.times do
-   Question.create!(
-     title: RandomData.random_question,
-     body: RandomData.random_paragraph,
-     resolved: false
-   )
- end
 
  # Create an admin user
  admin = User.create!(
@@ -65,4 +60,3 @@ include RandomData
  puts "#{Topic.count} topics created"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
- puts "#{Question.count} questions created"
