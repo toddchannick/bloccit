@@ -1,0 +1,6 @@
+<div class="form-group">
+  <%= f.label :rating %>
+  <%= f.select :rating,
+                   class: 'form-control',
+                   value: rating.map(&:severity).join(', ') %>
+</div>

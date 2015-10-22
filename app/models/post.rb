@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :labelings, as: :labelable
   has_many :labels, through: :labelings
+  has_one :rating
 
   #this will order all posts by their 'created_at' date in descending order (recent first)
   default_scope { order('created_at DESC') }

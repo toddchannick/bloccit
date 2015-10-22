@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021134552) do
+ActiveRecord::Schema.define(version: 20151022164118) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
@@ -78,19 +78,24 @@ ActiveRecord::Schema.define(version: 20151021134552) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sponsored_posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "price"
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "severity"
     t.integer  "topic_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "post_id"
+    t.integer  "rateable_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
+
+  add_index "ratings", ["post_id"], name: "index_ratings_on_post_id"
+  add_index "ratings", ["rateable_id"], name: "index_ratings_on_rateable_id"
+  add_index "ratings", ["topic_id"], name: "index_ratings_on_topic_id"
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
     t.boolean  "public",      default: true
     t.text     "description"
+    t.integer  "rating_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'rating/show'
+
   resources :labels, only: [:show]
 
   resources :topics do
