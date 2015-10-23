@@ -52,6 +52,13 @@ include RandomData
    role:     'admin'
  )
 
+admin = User.create!(
+   name:     'Todd Channick',
+   email:    'toc5012@gmail.com',
+   password: 'Bgg4fgme55',
+   role:     'admin'
+ )
+
  # Create a member
  member = User.create!(
    name:     'Member User',
