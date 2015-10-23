@@ -13,7 +13,6 @@
 
     <div class="topic-desc gray-box">
       <%= render partial: "labels/list", locals: { labels: @topic.labels } %>
-      <br><br>
       <p class="lead">
         <%= @topic.description %>
       </p>
@@ -22,10 +21,8 @@
   </div>
 </div>
 
-  <div class="row">
-    <div class="col-xs-9">
-      <div class="posts yellow-box">
-       <%= render @topic.posts %>
-     </div>
-   </div>
+<div class="row">
+  <div class="col-xs-9">
+    <%= render @topic.posts %>
  </div>
+</div>
