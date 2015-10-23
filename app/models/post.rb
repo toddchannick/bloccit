@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   has_many :labelings, as: :labelable
   has_many :labels, through: :labelings
   has_many :votes, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   #this will order all posts by their 'created_at' date in descending order (recent first)
   default_scope { order('rank DESC') }

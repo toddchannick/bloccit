@@ -41,6 +41,9 @@
         </small>
       </div>
     </h3>
+    <% if current_user %>
+       <%= render partial: 'favorites/favorite', locals: { post: @post } %>
+     <% end %>
   </div>
 </div>
 
@@ -58,7 +61,7 @@
      <% end %>
 
       <%= link_to "Back", @topic , class: 'btn btn-sm btn-primary pull-left' %>
-      
+
    </div>
 
  </div>
