@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+  after_create :auto_favorite
+  after_create :send_post_email
+
   belongs_to :topic
   belongs_to :user
   has_many :comments, dependent: :destroy
@@ -31,6 +34,16 @@ class Post < ActiveRecord::Base
      age_in_days = (created_at - Time.new(1970,1,1)) / 1.day.seconds
      new_rank = points + age_in_days
      update_attribute(:rank, new_rank)
-   end
+  end
+
+  private
+
+  def auto_favorite
+    Favorite.create(post: self, user: self.user)
+  end
+
+  def send_post_email
+    FavoriteMailer.new_post(self).deliver_now
+  end
 
 end
