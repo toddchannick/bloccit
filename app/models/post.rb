@@ -13,6 +13,8 @@ class Post < ActiveRecord::Base
   #this will order all posts by their 'created_at' date in descending order (recent first)
   default_scope { order('rank DESC') }
 
+  scope :visible_to, -> (user) { user ? all : joins(:topic).where('topics.public' => true) }
+
   validates :title, length: { minimum: 5 }, presence: true
   validates :body, length: { minimum: 20 }, presence: true
   validates :topic, presence: true
