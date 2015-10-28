@@ -9,18 +9,34 @@
          </div>
        <% end %>
        <div class="media-body">
-         <h2 class="media-heading"><%= @user.name %></h2>
-         <small>
-           <%= pluralize(@user.posts.count, 'post') %>,
-           <%= pluralize(@user.comments.count, 'comment') %>
-         </small>
+         <h2 class="media-heading caps"><%= @user.name %></h2>
+           <%= posts?(@user) %>
+           <%= comments?(@user) %>
        </div>
      </div>
    </div>
  </div>
 
- <h2>Posts</h2>
- <%= render @user.posts %>
+ <div class="row">
+   <div class="col-md-6">
+     <% if @user.posts.count > 0 %>
+       <h2>Posts</h2>
+       <%= render @user.posts %>
+     <% end %>
+   </div>
+   <div class="col-md-6">
+     <% if @user.comments.count > 0 %>
+       <h2>Comments</h2>
+       <%= render @user.comments %>
+     <% end %>
+   </div>
+ </div>
 
- <h2>Comments</h2>
- <%= render @user.comments %>
+ <div class="row">
+   <div class="col-md-8">
+     <% if @user.favorites.count > 0 %>
+       <h2>Favorite Posts</h2>
+       <%= render @user.favorites.collect(&:post) %>
+     <% end %>
+   </div>
+ </div>
