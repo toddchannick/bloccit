@@ -1,0 +1,5 @@
+$(document).ready(function(){
+
+  $('.js-votes').html("<%= escape_javascript(render(@post.points) %>");
+  
+});

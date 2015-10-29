@@ -1,1 +1,1 @@
-console.log('this is from the scripts.js file');
+console.log(Routes)
