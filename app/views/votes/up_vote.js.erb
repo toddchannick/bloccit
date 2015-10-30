@@ -1,5 +1,5 @@
 $(document).ready(function(){
 
-  $('.js-votes').html("<%= escape_javascript(render(@post.points) %>");
-  
+  $('#post-<%= @post.id %>-vote').html("<strong><%= @post.points %></strong>");
+
 });
